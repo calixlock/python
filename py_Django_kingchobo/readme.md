@@ -65,6 +65,12 @@ py .\mysite\manage.py startapp [kingchobo : appServiceName]
 
 ```
 
+- Django shell 실행
+
+````sh
+# 가상환경에 접속 후 manage.py가 있는 경로를 찾아 실행
+py manage.py shell
+
 ---
 
 ### db_sqlite3 table 생성 및 migration
@@ -127,4 +133,4 @@ git commit -m "Apply .gitignore"
 git status --ignored
 
 ▶ 출처: https://inpa.tistory.com/entry/GIT-⚡️-gitignore-자동-생성 [Inpa Dev 👨‍💻:티스토리]`
-```
+````
