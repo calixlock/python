@@ -1,7 +1,13 @@
 ## 참고
 
+#### 참고 영상
+
 - https://www.youtube.com/@kingchobo
 - https://www.youtube.com/playlist?list=PLTb3qGCzYjS0Lwc-lnQMsvbc8NPBdhRTj
+
+#### 장고 docs / db
+
+- https://docs.djangoproject.com/en/5.0/topics/db/queries/
 
 ---
 
@@ -118,13 +124,52 @@ py manage.py shell
     - migrate 진행됨
     - sqlite3 viewer로 생성된 `kingchobo_member` table 확인 가능
 
+### db_data 접근 방식 query
+
+```sh
+# django shell 접근
+py manage.py shell
+```
+
+#### data 조회
+
+```py
+from kingchobo.models import Member
+Member.objects.all() # 객체 내 전체 data 조회
+Member.objects.filter(id=1) # id가 1인 객체 list적 조회 / 없을 경우 빈 list 반환
+Member.objects.get(id=1) # 특정 객체(id=1) 하나 조회 / 없을 경우 오류 발생
+Member.objects.filter(name__contains="x") # 특정 이니셜을 포함한 데이터 조회
+```
+
+#### data CRUD
+
+```py
+from kingchobo.models import Member
+from django.utils import timezone
+# data create
+m = Member(name="ex_name",email="ex_email",profile="ex_profile",create_date=timezone.now())
+m.save()
+# data read & delete
+m = Member.objects.get(id=1) # id가 1인 객체 read
+m.delete()
+
+# data modify
+m = Member.objects.get(id=1)
+## 수정하고자 하는 값 변환
+m.name = "another_name"
+m.email = "another_email"
+m.profile = "another_email"
+m.save()
+
+```
+
 ---
 
 ## ※ 주의
 
 ### python 파일 gitignore 적용
 
-```shell
+```sh
 # add된 상태에서 .gitignore가 안통하기 때문에 스테이징 된 것들 일단 모두 되돌려 다시 설정
 출처: https://inpa.tistory.com/entry/GIT-⚡️-gitignore-자동-생성 [Inpa Dev 👨‍💻:티스토리]
 git rm -r --cached .
