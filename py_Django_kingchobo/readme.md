@@ -8,7 +8,7 @@
 ### status :
 
 - 2024-06-08 ~ 2024-06-10
-- ( 06 / 07 )
+- ( 07 / 07 )
 
 ---
 
@@ -70,7 +70,7 @@ py .\mysite\manage.py startapp [kingchobo : appServiceName]
 ````sh
 # 가상환경에 접속 후 manage.py가 있는 경로를 찾아 실행
 py manage.py shell
-
+```
 ---
 
 ### db_sqlite3 table 생성 및 migration
@@ -92,6 +92,7 @@ py manage.py shell
   - 2. settings에 config 작성
 
     - mysite/config/settings.py 내부에 추가될 config 넣기
+
       ```py
       INSTALLED_APPS = [
         # db에 적재할 class 등록
@@ -117,9 +118,9 @@ py manage.py shell
 
 ---
 
-### ※ 주의
+## ※ 주의
 
-python 파일 gitignore 적용
+### python 파일 gitignore 적용
 
 ```shell
 # add된 상태에서 .gitignore가 안통하기 때문에 스테이징 된 것들 일단 모두 되돌려 다시 설정
