@@ -1,3 +1,7 @@
+---
+start - end: 2024-06-08 ~ 2024-06-
+---
+
 참고
 
 - https://www.youtube.com/@kingchobo
@@ -5,28 +9,45 @@
 
 ---
 
-- python 가상환경 생성
+- python 가상머신 환경 생성
 
 ```shell
 python -m venv [projectName]
 ```
 
-- python 가상환경 실행 / windows 10 env
+- python 가상머신 환경 실행 / windows 10 env
 
 ```shell
 [projectName]\Scripts\activate
 ```
 
-- python 가상환경 특정 버젼 설치
+- python 가상머신 내 특정 버젼 설치
 
 ```shell
 pip install django==5.0.3
 ```
 
-- python 가상환경 종료
+- python 가상머신 종료
 
-```python
+```shell
 deactivate
+```
+
+- python 가상환경 접속 후 Django_project 생성
+
+```shell
+mkdir [mysite : django project folder name]
+cd [mysite]
+# 프로젝트의 config를 설정할 폴더위치 지정[.]
+django-admin startproject config .
+```
+
+- Django_project 실행
+
+```shell
+# manage.py가 있는 경로를 찾아 실행
+py manage.py runserver
+# (일반적으로) 127.0.0.1:8000에서 접근 가능
 ```
 
 ### ※ 주의
