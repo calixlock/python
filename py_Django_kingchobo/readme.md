@@ -1,11 +1,11 @@
----
-start - end: 2024-06-08 ~ 2024-06-
----
-
 참고
 
 - https://www.youtube.com/@kingchobo
 - https://www.youtube.com/playlist?list=PLTb3qGCzYjS0Lwc-lnQMsvbc8NPBdhRTj
+
+---
+
+## status : 2024-06-08 ~ 2024-06-10( 07/07 )
 
 ---
 
@@ -56,6 +56,41 @@ py manage.py runserver
 py .\mysite\manage.py startapp [kingchobo : appServiceName]
 
 ```
+
+---
+
+- DB에 데이터 테이블 형식 셋팅
+
+  - 1. 특정 mysite/kingchobo/models.py 내부에 필요한 데이터 필드 지정
+
+  ```py
+  class Member(models.Model):
+  name = models.CharField(max_length=50)
+  email = models.CharField(max_length=100)
+  profile = models.TextField()
+  create_date = models.DateTimeField()
+  ```
+
+  - 2. mysite/config/settings.py 내부에 추가될 config 넣기
+
+  ```py
+  INSTALLED_APPS = [
+    # db에 적재할 class 등록
+    'kingchobo.apps.KingchoboConfig',
+    ]
+  ```
+
+  - 3. shell에서 `py manage.py makemigrations` 명령어 실행
+
+  - 4. mysite/kingchobo/migrations/ 내부에 추가된 파일 확인
+
+    - 0001_initial.py 파일 생성됨(파일명은 다를수 있음).
+
+  - 5. migration 하기 전에 `py manage.py sqlmigrate kingchobo 0001` shell에 입력하여 migration 진행 전 일어날 현상 확인 가능
+
+  - 6. shell에서 `py manage.py migrate` 명령어 실행
+    - migrate 진행됨
+    - sqlite3 viewer로 생성된 `kingchobo_member` table 확인 가능
 
 ---
 
