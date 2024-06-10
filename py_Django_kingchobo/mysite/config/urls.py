@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# 추가 패키지 불러오기
+from kingchobo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # url 연결
+    path('kingchobo/hello', views.hello),
 ]
