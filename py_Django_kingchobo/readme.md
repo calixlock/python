@@ -1,13 +1,18 @@
-참고
+## 참고
 
 - https://www.youtube.com/@kingchobo
 - https://www.youtube.com/playlist?list=PLTb3qGCzYjS0Lwc-lnQMsvbc8NPBdhRTj
 
 ---
 
-## status : 2024-06-08 ~ 2024-06-10( 07/07 )
+### status :
+
+- 2024-06-08 ~ 2024-06-10
+- ( 05 / 07 )
 
 ---
+
+### 환경 셋팅
 
 - python 가상머신 환경 생성
 
@@ -15,23 +20,26 @@
 python -m venv [projectName]
 ```
 
-- python 가상머신 환경 실행 / windows 10 env
+- python 가상머신 환경 실행 및 종료 / windows 10 env
 
 ```sh
+# 실행
 [projectName]\Scripts\activate
+# 종료
+[projectName]\Scripts\deactivate
+deactivate
 ```
 
-- python 가상머신 내 특정 버젼 설치
+- python 가상머신 내 특정 버전 설치
 
 ```sh
+# 설치된 pip 리스트 확인
+pip --list
+# django 5.0.3 특정 버전 설치
 pip install django==5.0.3
 ```
 
-- python 가상머신 종료
-
-```sh
-deactivate
-```
+### django 프로젝트 생성 및 실행
 
 - python 가상환경 접속 후 Django_project 생성
 
@@ -58,6 +66,8 @@ py .\mysite\manage.py startapp [kingchobo : appServiceName]
 ```
 
 ---
+
+### db_sqlite3 table 생성 및 migration
 
 - DB에 데이터 테이블 형식 셋팅
 
