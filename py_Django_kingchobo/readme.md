@@ -67,10 +67,12 @@ py .\mysite\manage.py startapp [kingchobo : appServiceName]
 
 - Django shell 실행
 
-````sh
+```sh
 # 가상환경에 접속 후 manage.py가 있는 경로를 찾아 실행
 py manage.py shell
+
 ```
+
 ---
 
 ### db_sqlite3 table 생성 및 migration
@@ -81,13 +83,13 @@ py manage.py shell
 
     - 특정 mysite/kingchobo/models.py 내부에 필요한 데이터 필드 지정
 
-      ```py
-      class Member(models.Model):
-      name = models.CharField(max_length=50)
-      email = models.CharField(max_length=100)
-      profile = models.TextField()
-      create_date = models.DateTimeField()
-      ```
+  ```sh
+  class Member(models.Model):
+  name = models.CharField(max_length=50)
+  email = models.CharField(max_length=100)
+  profile = models.TextField()
+  create_date = models.DateTimeField()
+  ```
 
   - 2. settings에 config 작성
 
@@ -134,4 +136,4 @@ git commit -m "Apply .gitignore"
 git status --ignored
 
 ▶ 출처: https://inpa.tistory.com/entry/GIT-⚡️-gitignore-자동-생성 [Inpa Dev 👨‍💻:티스토리]`
-````
+```
