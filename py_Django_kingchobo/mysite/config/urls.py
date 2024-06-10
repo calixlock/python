@@ -15,12 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+# url include 활용
+from django.urls import include, path
+
 # 추가 패키지 불러오기
-from kingchobo import views
+# from kingchobo import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # url 연결
-    path('kingchobo/hello', views.hello),
+    # path('kingchobo/hello', views.hello),
+    path('kingchobo/', include('kingchobo.urls')),
 ]
